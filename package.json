@@ -10,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
     "cm": "git-cz"
   },
@@ -33,6 +33,7 @@
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "commitizen": "^3.1.1",
+    "cross-env": "^5.2.0",
     "cz-conventional-changelog": "2.1.0",
     "husky": "^2.7.0",
     "lint-staged": "^8.2.1",
@@ -45,7 +46,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged && yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
