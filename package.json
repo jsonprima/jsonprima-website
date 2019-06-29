@@ -34,7 +34,9 @@
     "@commitlint/config-conventional": "^8.0.0",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "2.1.0",
-    "husky": "^2.7.0"
+    "husky": "^2.7.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2"
   },
   "config": {
     "commitizen": {
@@ -43,7 +45,14 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
