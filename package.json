@@ -11,7 +11,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test",
-    "eject": "react-scripts eject",
+    "eject": "echo \"Eject is not allowed\" && exit 1",
     "cm": "git-cz"
   },
   "eslintConfig": {
