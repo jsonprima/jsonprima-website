@@ -1,22 +1,21 @@
 import React from 'react'
-import './styles.css'
+import { Wrapper, Header, Link } from './styles'
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
+  <Wrapper>
+    <Header>
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>
-      <a
-        className="App-link"
+      <Link
         href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"
       >
         Learn React
-      </a>
-    </header>
-  </div>
+      </Link>
+    </Header>
+  </Wrapper>
 )
 
 export default App
