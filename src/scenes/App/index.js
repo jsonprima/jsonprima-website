@@ -1,9 +1,9 @@
 import React from 'react'
-import { Wrapper, Header, Link } from './styles'
+import { Wrapper, Container, Link } from './styles'
 
 const App = () => (
   <Wrapper>
-    <Header>
+    <Container width={1} py={64}>
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>
@@ -14,7 +14,7 @@ const App = () => (
       >
         Learn React
       </Link>
-    </Header>
+    </Container>
   </Wrapper>
 )
 
