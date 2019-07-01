@@ -5,7 +5,7 @@ import { Wrapper, Container } from './styles'
 
 const App = () => (
   <Wrapper>
-    <Container width={1} py={32}>
+    <Container width={1} py={32} as="main">
       <Header />
       <Footer />
     </Container>
