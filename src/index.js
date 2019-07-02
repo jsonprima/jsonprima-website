@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom'
 import GlobalStyle from './styles.global'
 import App from './scenes/App'
 import * as serviceWorker from './services/serviceWorker'
+import { Normalize } from 'styled-normalize'
 
 ReactDOM.render(
   <React.Fragment>
+    <Normalize />
     <GlobalStyle />
     <App />
   </React.Fragment>,
