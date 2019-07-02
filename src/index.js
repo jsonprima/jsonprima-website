@@ -4,13 +4,17 @@ import GlobalStyle from './styles.global'
 import App from './scenes/App'
 import * as serviceWorker from './services/serviceWorker'
 import { Normalize } from 'styled-normalize'
+import { Provider } from 'react-redux'
+import configureReduxStore from './services/configureStore'
+
+const store = configureReduxStore()
 
 ReactDOM.render(
-  <React.Fragment>
+  <Provider store={store}>
     <Normalize />
     <GlobalStyle />
     <App />
-  </React.Fragment>,
+  </Provider>,
   document.getElementById('root'),
 )
 
