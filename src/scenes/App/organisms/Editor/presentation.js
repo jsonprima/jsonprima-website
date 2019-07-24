@@ -6,7 +6,13 @@ import 'prismjs/components/prism-json'
 import ValidateButton from './atoms/ValidateButton'
 import { Wrapper, EditorContainer, ValidateContainer } from './styles'
 
-const Presentation = ({ code, update }) => (
+const Presentation = ({
+  code,
+  update,
+  validate,
+  pendingValidation,
+  response,
+}) => (
   <Wrapper flexDirection="column" alignItems="center">
     <EditorContainer width={1 / 2}>
       <CodeEditor
@@ -23,8 +29,14 @@ const Presentation = ({ code, update }) => (
       />
     </EditorContainer>
     <ValidateContainer width={1 / 2}>
-      <ValidateButton>Validate JSON</ValidateButton>
+      <ValidateButton
+        disabled={pendingValidation ? true : false}
+        onClick={() => validate(code)}
+      >
+        {pendingValidation ? 'Validating...' : 'Validate JSON'}
+      </ValidateButton>
     </ValidateContainer>
+    <div>{JSON.stringify(response)}</div>
   </Wrapper>
 )
 

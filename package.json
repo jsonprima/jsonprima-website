@@ -2,6 +2,7 @@
   "name": "jsonprima-web",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@rebass/grid": "^6.0.0",
     "prismjs": "^1.16.0",

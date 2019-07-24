@@ -4,7 +4,9 @@ import Presentation from './presentation'
 import { operations } from './duck'
 
 const mapStateToProps = state => ({
-  code: state.editor,
+  code: state.editor.code,
+  pendingValidation: state.editor.validate.pending,
+  response: state.editor.validate.response,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(operations, dispatch)

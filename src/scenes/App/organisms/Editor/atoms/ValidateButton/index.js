@@ -13,10 +13,16 @@ const ValidateButton = styled.button`
   cursor: pointer;
   width: 100%;
 
-  :hover {
+  :hover:not(:disabled) {
     color: #fff;
     background: #3bbec3;
     border: 1px solid #3bbec3;
+  }
+
+  :disabled {
+    background: #efefef;
+    border: 1px solid #efefef;
+    cursor: progress;
   }
 
   :focus,
