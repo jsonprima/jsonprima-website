@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 const ValidateButton = styled.button`
   border: 0;
-  background: 0;
-  color: #4f4f4f;
+  background: #3bbec3;
+  color: #fff;
   display: inline-block;
   padding: 12px 24px;
-  border: 1px solid #4f4f4f;
+  border: 1px solid #3bbec3;
   transition: all 0.1s ease-in;
   position: relative;
   overflow: hidden;
@@ -14,14 +14,13 @@ const ValidateButton = styled.button`
   width: 100%;
 
   :hover:not(:disabled) {
-    color: #fff;
-    background: #3bbec3;
-    border: 1px solid #3bbec3;
+    background: #32a8ad;
+    border: 1px solid #32a8ad;
   }
 
   :disabled {
-    background: #efefef;
-    border: 1px solid #efefef;
+    background: #32a8ad;
+    border: 1px solid #32a8ad;
     cursor: progress;
   }
 
