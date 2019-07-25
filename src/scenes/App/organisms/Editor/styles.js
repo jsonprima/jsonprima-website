@@ -2,8 +2,28 @@ import styled from 'styled-components'
 import { Flex, Box } from '@rebass/grid'
 
 export const EditorContainer = styled(Box)`
-  max-height: 60vh;
-  overflow: auto;
+  .code_editor {
+    font-size: 12px;
+    font-variant-ligatures: common-ligatures;
+    border: 1px solid #efefef;
+    counter-reset: line;
+  }
+
+  .code_editor__line_number:before {
+    position: absolute;
+    right: 100%;
+    margin-right: 10px;
+    text-align: right;
+    color: #3bbec3;
+    user-select: none;
+    counter-increment: line;
+    content: counter(line);
+  }
+
+  .code_editor > pre,
+  .code_editor > textarea {
+    line-height: 1.5 !important;
+  }
 `
 
 export const ValidateContainer = styled(Box)``

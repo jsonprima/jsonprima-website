@@ -14,21 +14,29 @@ const Presentation = ({
   response,
 }) => (
   <Wrapper flexDirection="column" alignItems="center">
-    <EditorContainer width={1 / 2}>
+    <EditorContainer width={'75%'}>
       <CodeEditor
         placeholder="Type some code…"
         value={code}
         onValueChange={update}
-        highlight={updatedCode => highlight(updatedCode, languages.json)}
+        highlight={updatedCode =>
+          highlight(updatedCode, languages.json)
+            .split('\n')
+            .map(
+              line => `<span class="code_editor__line_number">${line}</span>`,
+            )
+            .join('\n')
+        }
         padding={20}
         style={{
           fontFamily: '"Fira Mono", monospace',
           fontSize: 14,
-          background: '#fafafa',
+          overflow: 'visible',
         }}
+        className="code_editor"
       />
     </EditorContainer>
-    <ValidateContainer width={1 / 2}>
+    <ValidateContainer width={'75%'}>
       <ValidateButton
         disabled={pendingValidation ? true : false}
         onClick={() => validate(code)}
