@@ -12,7 +12,12 @@ const validate = code => dispatch => {
       code,
     })
     .then(response => {
-      dispatch(actions.successValidate(response.data))
+      dispatch(
+        actions.successValidate({
+          code,
+          errors: response.data,
+        }),
+      )
 
       /**
        * If response is an empty array, then JSON is valid.
