@@ -5,6 +5,8 @@ import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-json'
 import ValidateButton from './atoms/ValidateButton'
 import { Wrapper, EditorContainer, ValidateContainer } from './styles'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Presentation = ({
   code,
@@ -15,6 +17,15 @@ const Presentation = ({
 }) => (
   <Wrapper flexDirection="column" alignItems="center">
     <EditorContainer width={'75%'}>
+      <ToastContainer
+        position={toast.POSITION.TOP_CENTER}
+        autoClose={5000}
+        hideProgressBar={true}
+        closeOnClick={true}
+        pauseOnHover={false}
+        draggable={true}
+        closeButton={false}
+      />
       <CodeEditor
         placeholder="Type some code…"
         value={code}
