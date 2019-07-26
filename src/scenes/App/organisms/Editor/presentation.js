@@ -7,6 +7,7 @@ import ValidateButton from './atoms/ValidateButton'
 import { Wrapper, EditorContainer, ValidateContainer } from './styles'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ErrorContainer from './organisms/ErrorContainer'
 
 const Presentation = ({
   code,
@@ -55,7 +56,11 @@ const Presentation = ({
         {pendingValidation ? 'Validating...' : 'Validate JSON'}
       </ValidateButton>
     </ValidateContainer>
-    <div>{JSON.stringify(response)}</div>
+    {response &&
+    Array.isArray(response.errors) &&
+    response.errors.length > 0 ? (
+      <ErrorContainer code={response.code} errors={response.errors} />
+    ) : null}
   </Wrapper>
 )
 
