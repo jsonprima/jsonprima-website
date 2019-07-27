@@ -9,9 +9,7 @@ const Presentation = () => (
     <Title>
       {'JSON {'} <span css="font-weight: 300;">Prima</span> {'}'}
     </Title>
-    <Description>
-      Error tolerant RFC 8259 compliant JSON validator in Rust
-    </Description>
+    <Description>RFC 8259 compliant JSON validator</Description>
   </Wrapper>
 )
 
